@@ -13,7 +13,10 @@
         =f.label field, class: "control-label"
 
         .controls
-          =f.text_field field, class: "text_field span6", required: true
+          - if field == :name
+            =f.text_field field, class: "text_field span6", required: true
+          - else
+            =f.text_area field, class: "text_area span6", required: true, rows: 6
           %span.help-inline
             =f.error_message_on field
 
